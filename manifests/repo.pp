@@ -21,7 +21,7 @@ class powerdns::repo inherits powerdns {
         -> Yumrepo['powerdns']
       }
 
-      if versioncmp($facts['os']['release']['major'], '8') >= 0 {
+      if versioncmp($facts['os']['release']['major'], '8') == 0 {
         if ($facts['os']['name'] == 'Rocky') {
           $mirrorlist = "https://mirrors.rockylinux.org/mirrorlist?arch=\$basearch&repo=PowerTools-\$releasever"
           $gpgkey = 'file:///etc/pki/rpm-gpg/RPM-GPG-KEY-rockyofficial'
